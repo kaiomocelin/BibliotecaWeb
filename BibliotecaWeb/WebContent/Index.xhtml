@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+    	
+    	<h1 style="margin-bottom: 30px">Menu</h1>
+    	
+    	<h:link outcome="CadastrarLivro" value="Novo livro"
+			styleClass="btn btn-primary" />
+		<h:link outcome="GerenciarLivros" value="Gerenciar livros"
+			styleClass="btn btn-primary" />
+		<br/>
+		<h:link outcome="CadastrarCliente" value="Novo cliente"
+			styleClass="btn btn-primary" />
+		<h:link outcome="GerenciarClientes" value="Gerenciar clientes"
+			styleClass="btn btn-primary" />
+		<br/>
+		<h:link outcome="CadastrarFuncionario" value="Novo funcionario"
+			styleClass="btn btn-primary" />
+		<h:link outcome="GerenciarFuncionarios" value="Gerenciar funcionarios"
+			styleClass="btn btn-primary" />
+    	
+	</ui:define>
+</ui:composition>
+</html>
