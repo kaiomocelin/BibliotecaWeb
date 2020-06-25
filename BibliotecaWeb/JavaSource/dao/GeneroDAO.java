@@ -13,7 +13,6 @@ public class GeneroDAO {
 		EntityManager em = JPAUtils.getInstance();
 		List<Genero> generos =
 				em.createQuery("SELECT g FROM Genero g", Genero.class).getResultList();
-				System.out.println(generos);
 				return generos;
 	}
 	
