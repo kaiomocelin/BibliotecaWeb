@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h:form>
+
+
+			<h2>Emprestar Livro</h2>
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<div class="form-group">
+				<h:outputLabel value="Livro:" />
+				<h:selectOneMenu id="drpLivros"
+					value="#{emprestimoBean.emprestimo.livro}"
+					styleClass="form-control col-4"
+					converter="omnifaces.SelectItemsIndexConverter" required="true"
+					requiredMessage="Campo obrigatório!">
+					<f:selectItem itemValue="#{null}" itemLabel="  -- SELECIONE --  " />
+					<f:selectItems value="#{livroBean.livros}" var="livro"
+						itemLabel="#{livro.titulo}" itemValue="#{livro}" />
+				</h:selectOneMenu>
+				<h:message for="drpLivros" styleClass="text-danger" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Cliente:" />
+				<h:selectOneMenu id="drpClientes"
+					value="#{emprestimoBean.emprestimo.cliente}"
+					styleClass="form-control col-4"
+					converter="omnifaces.SelectItemsIndexConverter" required="true"
+					requiredMessage="Campo obrigatório!">
+					<f:selectItem itemValue="#{null}" itemLabel="  -- SELECIONE --  " />
+					<f:selectItems value="#{clienteBean.clientes}" var="cliente"
+						itemLabel="#{cliente.nome}" itemValue="#{cliente}" />
+				</h:selectOneMenu>
+				<h:message for="drpClientes" styleClass="text-danger" />
+			</div>
+			
+			
+			<div class="form-group">
+				<h:outputLabel value="Funcionario:" />
+				<h:selectOneMenu id="drpFuncionarios"
+					value="#{emprestimoBean.emprestimo.funcionario}"
+					styleClass="form-control col-4"
+					converter="omnifaces.SelectItemsIndexConverter" required="true"
+					requiredMessage="Campo obrigatório!">
+					<f:selectItem itemValue="#{null}" itemLabel="  -- SELECIONE --  " />
+					<f:selectItems value="#{funcionarioBean.funcionarios}" var="funcionario"
+						itemLabel="#{funcionario.nome}" itemValue="#{funcionario}" />
+				</h:selectOneMenu>
+				<h:message for="drpFuncionarios" styleClass="text-danger" />
+			</div>
+
+			<h:commandButton action="#{emprestimoBean.cadastrarEmprestimo()}"
+				value="Emprestar" />
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+</html>
