@@ -10,19 +10,27 @@
 
 		<h:form>
 			<h2>Editar dados</h2>
-			<h:inputHidden value="#{clienteBean.cliente.id}" />
-			<h:outputLabel value="Nome:" />
-			<h:inputText value="#{clienteBean.cliente.nome}" />
-			<br />
-			<h:outputLabel value="Telefone:" />
-			<h:inputText value="#{clienteBean.cliente.telefone}" />
-			<br />
-			<h:outputLabel value="E-mail:" />
-			<h:inputText value="#{clienteBean.cliente.email}" />
-			<br />
-			
+			<div class="form-group">
+				<h:inputHidden value="#{clienteBean.cliente.id}" />
+				<h:outputLabel value="Nome:" />
+				<h:inputText value="#{clienteBean.cliente.nome}"
+					styleClass="form-control col-6" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Telefone:" />
+				<h:inputText value="#{clienteBean.cliente.telefone}"
+					styleClass="form-control col-6" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="E-mail:" />
+				<h:inputText value="#{clienteBean.cliente.email}"
+					styleClass="form-control col-6" />
+			</div>
+
 			<h:commandButton action="#{clienteBean.alterar()}" value="Salvar" />
-			<br />
+			
 		</h:form>
 	</ui:define>
 </ui:composition>

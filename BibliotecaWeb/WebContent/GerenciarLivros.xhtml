@@ -12,10 +12,11 @@
 
 		<h:link outcome="CadastrarLivro" value="Novo livro"
 			styleClass="btn btn-primary" />
-		<h:link outcome="Index" value="Home"
-			styleClass="btn btn-primary" />
+		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
 
 		<h:form style="margin-top: 20px">
+			<p:growl id="growl" showDetail="true" sticky="true" />
+
 			<h:dataTable value="#{livroBean.livros}" var="livro"
 				styleClass="table table-striped table-hover">
 				<h:column>
@@ -37,17 +38,17 @@
 					<f:facet name="header">Autor</f:facet>
 					<h:outputText value="#{livro.autor}" />
 				</h:column>
-				
+
 				<h:column>
 					<f:facet name="header">Genero</f:facet>
 					<h:outputText value="#{livro.genero.nome}" />
 				</h:column>
-				
+
 				<h:column>
-					<f:facet name="header">Emprestado</f:facet>
+					<f:facet name="header">Ocupado</f:facet>
 					<h:outputText value="#{livro.emprestado}" />
 				</h:column>
-				
+
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
 					<h:commandButton action="#{livroBean.remover(livro)}"

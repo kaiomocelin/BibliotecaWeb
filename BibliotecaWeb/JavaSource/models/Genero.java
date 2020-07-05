@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Genero implements Serializable{
@@ -12,7 +14,8 @@ public class Genero implements Serializable{
 	
 	private static final long serialVersionUID = -6206223914813224960L;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "genero_seq_gen")
+	@SequenceGenerator(name = "genero_seq_gen", sequenceName = "genero_id_seq")
 	private int id;
 	private String nome;
 	

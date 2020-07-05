@@ -46,6 +46,16 @@
 				</h:column>
 				
 				<h:column>
+					<f:facet name="header">Multa</f:facet>
+					<h:outputText value="#{cliente.multa}" />
+				</h:column>
+				
+				<h:column>
+					<h:commandButton action="#{clienteBean.pagarMulta(cliente)}"
+						value="Pagar" styleClass="btn btn-danger" />
+				</h:column>
+				
+				<h:column>
 					<f:facet name="header">Remover</f:facet>
 					<h:commandButton action="#{clienteBean.remover(cliente)}"
 						value="Remover" styleClass="btn btn-danger" />

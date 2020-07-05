@@ -10,6 +10,7 @@ import javax.inject.Named;
 
 import dao.ClienteDAO;
 import models.Cliente;
+import models.Emprestimo;
 
 @Named
 @SessionScoped
@@ -49,6 +50,14 @@ public class ClienteBean implements Serializable{
 		return "GerenciarClientes.xhtml?faces-redirect=true";
 	}
 
+	public String pagarMulta(Cliente cliente) {
+		cliente.setPendencia(false);
+		cliente.setMulta(0);
+		ClienteDAO.alterar(cliente);
+		return null;
+		
+	}
+	
 	public Cliente getCliente() {
 		return cliente;
 	}

@@ -46,7 +46,7 @@ public class FuncionarioBean implements Serializable{
 	public String alterar() {
 		FuncionarioDAO.alterar(funcionario);
 		funcionario = new Funcionario();
-		return "Index.xhtml?faces-redirect=true";
+		return "GerenciarFuncionarios.xhtml?faces-redirect=true";
 	}
 
 	public Funcionario getFuncionario() {

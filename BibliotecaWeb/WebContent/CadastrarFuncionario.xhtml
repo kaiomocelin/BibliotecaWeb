@@ -12,16 +12,18 @@
 
 		<h:form>
 			<h2>Cadastrar Funcionario</h2>
+			
+			<div class="form-group">
 			<h:outputLabel value="Nome:" />
 			<h:inputText id="txtNome" value="#{funcionarioBean.funcionario.nome}"
+				styleClass="form-control col-6"
 				required="true" requiredMessage="Campo obrigatório!" />
 			<h:message for="txtNome" styleClass="text-danger" />
-			
+			</div>
 			
 			<h:commandButton action="#{funcionarioBean.cadastrar()}"
 				value="Cadastrar" />
-			<br />
-
+			
 		</h:form>
 
 	</ui:define>

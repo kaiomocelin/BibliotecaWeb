@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -24,22 +25,38 @@ public class LivroBean implements Serializable {
 		generos = new ArrayList<Genero>();
 
 	}
-	
+
 	// Atributos
 	private static final long serialVersionUID = 1306734049083259978L;
 	private Livro livro;
 	private List<Livro> livros;
 	private List<Genero> generos;
-	
+
 	// Ações
 	public String cadastrar() {
-		LivroDAO.cadastrar(livro);
-		livro = new Livro();
-		return "GerenciarLivros.xhtml?faces-redirect=true";
+		if (LivroDAO.cadastrar(livro)) {
+			livro = new Livro();
+			return "GerenciarLivros.xhtml?faces-redirect=true";
+		} else {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro já existe!"));
+			return null;
+		}
+
 	}
 
-	public void remover(Livro livro) {
-		LivroDAO.remover(livro);
+	public String remover(Livro livro) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		if(LivroDAO.remover(livro)) {
+			context.addMessage(null, new FacesMessage("Successful",  "Livro removido com sucesso!") );
+			return null;
+		}else {
+			context.addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não pode ser removido!"));
+			return null;
+		}
+			
+		
 	}
 
 	public String detalhar() {
@@ -54,6 +71,7 @@ public class LivroBean implements Serializable {
 		LivroDAO.alterar(livro);
 		livro = new Livro();
 		return "GerenciarLivros.xhtml?faces-redirect=true";
+		
 	}
 
 	// Getter & Setters

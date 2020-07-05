@@ -12,24 +12,33 @@
 
 		<h:form>
 			<h2>Cadastrar Cliente</h2>
-			<h:outputLabel value="Nome:" />
-			<h:inputText id="txtNome" value="#{clienteBean.cliente.nome}"
-				required="true" requiredMessage="Campo obrigatório!" />
-			<h:message for="txtNome" styleClass="text-danger" />
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<div class="form-group">
+				<h:outputLabel value="Nome:" />
+				<h:inputText id="txtNome" value="#{clienteBean.cliente.nome}"
+					styleClass="form-control col-6" 
+					required="true" requiredMessage="Campo obrigatório!" />
+				<h:message for="txtNome" styleClass="text-danger" />
+			</div>
 
+			<div class="form-group">
+				<h:outputLabel value="Telefone:" />
+				<h:inputText value="#{clienteBean.cliente.telefone}" 
+					styleClass="form-control col-6" />
+			</div>
 
-			<br />
-			<h:outputLabel value="Telefone:" />
-			<h:inputText value="#{clienteBean.cliente.telefone}" />
-
-			<br />
-			<h:outputLabel value="Email:" />
-			<h:inputText value="#{clienteBean.cliente.email}" />
+			<div class="form-group">
+				<h:outputLabel value="Email:" />
+				<h:inputText value="#{clienteBean.cliente.email}" 
+					styleClass="form-control col-6" />
+			</div>
 
 			<h:commandButton action="#{clienteBean.cadastrar()}"
 				value="Cadastrar" />
 			<br />
-			
+
 		</h:form>
 
 	</ui:define>

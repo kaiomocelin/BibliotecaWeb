@@ -6,6 +6,7 @@
 		<class>models.Genero</class>
 		<class>models.Cliente</class>
 		<class>models.Funcionario</class>
+		<class>models.Emprestimo</class>
 		<properties>
 			<!-- database connection -->
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

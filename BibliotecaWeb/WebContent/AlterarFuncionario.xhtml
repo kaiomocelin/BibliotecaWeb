@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h:form>
+			<h2>Editar dados</h2>
+			
+			<h:inputHidden value="#{funcionarioBean.funcionario.id}" />
+			
+			<div class="form-group">
+			<h:outputLabel value="Nome:" />
+			<h:inputText value="#{funcionarioBean.funcionario.nome}"
+				styleClass="form-control col-6" />
+			</div>
+
+			<h:commandButton action="#{funcionarioBean.alterar()}" value="Salvar" />
+			
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

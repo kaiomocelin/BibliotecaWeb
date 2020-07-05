@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h2 style="margin-bottom: 20px">Gerenciar Emprestimos</h2>
+
+		<h:link outcome="CadastrarEmprestimo" value="Emprestar livro"
+			styleClass="btn btn-primary" />
+		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
+
+		<h:form style="margin-top: 20px">
+			<h:dataTable value="#{emprestimoBean.emprestimos}" var="emprestimo"
+				styleClass="table table-striped table-hover">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{emprestimo.id}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Data</f:facet>
+					<h:outputText value="#{emprestimo.dataEmprestimo}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Devolução</f:facet>
+					<h:outputText value="#{emprestimo.dataDevolucao}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Título</f:facet>
+					<h:outputText value="#{emprestimo.livro.titulo}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Cliente</f:facet>
+					<h:outputText value="#{emprestimo.cliente.nome}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Funcionario</f:facet>
+					<h:outputText value="#{emprestimo.funcionario.nome}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Devolver</f:facet>
+					<h:commandButton
+						action="#{emprestimoBean.devolverLivro(emprestimo)}"
+						value="Devolver" styleClass="btn btn-danger" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
