@@ -1,13 +1,22 @@
 package models;
 
 import java.io.Serializable;
+<<<<<<< HEAD
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> 62756635758920db1db877917d32ecaf53a49188
 
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.SequenceGenerator;
+=======
+import javax.persistence.OneToMany;
+>>>>>>> 62756635758920db1db877917d32ecaf53a49188
 
 @Entity
 @RequestScoped
@@ -30,6 +39,7 @@ public class Cliente implements Serializable{
 	private String telefone;
 	private String email;
 
+<<<<<<< HEAD
 	
 	
 	public double getMulta() {
@@ -39,6 +49,10 @@ public class Cliente implements Serializable{
 	public void setMulta(double multa) {
 		this.multa = multa;
 	}
+=======
+//	@OneToMany(mappedBy="cliente")
+ //   private List<Emprestimo> emprestimos = new ArrayList<>();
+>>>>>>> 62756635758920db1db877917d32ecaf53a49188
 
 	public String getNome() {
 		return nome;

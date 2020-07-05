@@ -1,14 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-<<<<<<< HEAD
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-=======
-	xmlns:rich="http://richfaces.org/rich"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:a4j="http://richfaces.org/a4j"
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
@@ -20,7 +13,6 @@
 
 
 			<h2>Emprestar Livro</h2>
-<<<<<<< HEAD
 			<p:messages id="messages" showDetail="true" closable="true">
 				<p:autoUpdate />
 			</p:messages>
@@ -67,43 +59,6 @@
 				</h:selectOneMenu>
 				<h:message for="drpFuncionarios" styleClass="text-danger" />
 			</div>
-=======
-
-
-			<h:outputLabel value="Data:" />
-			<h:inputText id="txtData" value="#{emprestimoBean.emprestimo.data}"
-				required="true" requiredMessage="Campo obrigatório!" />
-			<h:message for="txtData" styleClass="text-danger" />
-			<br />
-			
-			<h:outputLabel value="Livro:" />
-			<h:selectOneMenu value="#{emprestimoBean.emprestimo.livro}"
-				styleClass="form-control col-4" converter="omnifaces.SelectItemsIndexConverter" >
-				<f:selectItem itemValue="" itemLabel="  -- SELECIONE --  "/>
-				<f:selectItems value="#{livroBean.livros}" 
-					var="livro" itemLabel="#{livro.titulo}" 
-					itemValue="#{livro}"/>
-			</h:selectOneMenu>
-			
-			<h:outputLabel value="Cliente:" />
-			<h:selectOneMenu value="#{emprestimoBean.emprestimo.cliente}"
-				styleClass="form-control col-4" converter="omnifaces.SelectItemsIndexConverter" >
-				<f:selectItem itemValue="" itemLabel="  -- SELECIONE --  "/>
-				<f:selectItems value="#{clienteBean.clientes}" 
-					var="cliente" itemLabel="#{cliente.nome}" 
-					itemValue="#{cliente}"/>
-			</h:selectOneMenu>
-			
-			<h:outputLabel value="Funcionario:" />
-			<h:selectOneMenu value="#{emprestimoBean.emprestimo.funcionario}"
-				styleClass="form-control col-4" converter="omnifaces.SelectItemsIndexConverter" >
-				<f:selectItem itemValue="" itemLabel="  -- SELECIONE --  "/>
-				<f:selectItems value="#{funcionarioBean.funcionarios}" 
-					var="funcionario" itemLabel="#{funcionario.nome}" 
-					itemValue="#{funcionario}"/>
-			</h:selectOneMenu>
-
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 
 			<h:commandButton action="#{emprestimoBean.cadastrarEmprestimo()}"
 				value="Emprestar" />

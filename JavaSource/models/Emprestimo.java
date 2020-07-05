@@ -1,6 +1,5 @@
 package models;
 
-<<<<<<< HEAD
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -15,28 +14,11 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Emprestimo implements Serializable {
 
-=======
-import java.awt.List;
-import java.io.Serializable;
-
-import javax.enterprise.context.RequestScoped;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-@Entity
-public class Emprestimo implements Serializable{
-	
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	public Emprestimo() {
 		livro = new Livro();
 		cliente = new Cliente();
 		funcionario = new Funcionario();
 	}
-<<<<<<< HEAD
 
 	private static final long serialVersionUID = 7219524593887351044L;
 	@Id
@@ -89,27 +71,6 @@ public class Emprestimo implements Serializable{
 		}
 	}
 
-=======
-	
-	private static final long serialVersionUID = 7219524593887351044L;
-	@Id
-	@GeneratedValue
-	private int id;
-	private String data;
-
-	
-	@ManyToOne
-	private Livro livro;
-	
-	@ManyToOne
-	private Cliente cliente;
-	
-	@ManyToOne
-	private Funcionario funcionario;
-	
-
-	
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	public Livro getLivro() {
 		return livro;
 	}
@@ -126,17 +87,6 @@ public class Emprestimo implements Serializable{
 		this.id = id;
 	}
 
-<<<<<<< HEAD
-=======
-	public String getData() {
-		return data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -153,7 +103,6 @@ public class Emprestimo implements Serializable{
 		this.funcionario = funcionario;
 	}
 
-<<<<<<< HEAD
 	public LocalDate getDataEmprestimo() {
 		return dataEmprestimo;
 	}
@@ -170,17 +119,11 @@ public class Emprestimo implements Serializable{
 		this.dataDevolucao = dataDevolucao;
 	}
 
-=======
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cliente == null) ? 0 : cliente.hashCode());
-<<<<<<< HEAD
-=======
-		result = prime * result + ((data == null) ? 0 : data.hashCode());
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 		result = prime * result + ((funcionario == null) ? 0 : funcionario.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((livro == null) ? 0 : livro.hashCode());
@@ -201,14 +144,6 @@ public class Emprestimo implements Serializable{
 				return false;
 		} else if (!cliente.equals(other.cliente))
 			return false;
-<<<<<<< HEAD
-=======
-		if (data == null) {
-			if (other.data != null)
-				return false;
-		} else if (!data.equals(other.data))
-			return false;
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 		if (funcionario == null) {
 			if (other.funcionario != null)
 				return false;
@@ -224,11 +159,4 @@ public class Emprestimo implements Serializable{
 		return true;
 	}
 
-<<<<<<< HEAD
-=======
-	
-	
-	
-	
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 }

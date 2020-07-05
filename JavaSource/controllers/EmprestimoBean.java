@@ -5,18 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
-<<<<<<< HEAD
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import dao.EmprestimoDAO;
-=======
-import javax.inject.Named;
-
-import dao.EmprestimoDAO;
-import dao.LivroDAO;
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 import models.Cliente;
 import models.Emprestimo;
 import models.Funcionario;
@@ -26,41 +19,22 @@ import models.Livro;
 @SessionScoped
 public class EmprestimoBean implements Serializable {
 
-<<<<<<< HEAD
 	// Construtor
 	public EmprestimoBean() {
 		emprestimo = new Emprestimo();
-=======
-	//Construtor
-	public EmprestimoBean() {
-		emprestimo = new Emprestimo();
-		livro = new Livro();
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 		emprestimos = new ArrayList<Emprestimo>();
 		livros = new ArrayList<Livro>();
 		clientes = new ArrayList<Cliente>();
 		funcionarios = new ArrayList<Funcionario>();
-<<<<<<< HEAD
 	}
 
 	// Atributos
 	private static final long serialVersionUID = 1728576448215873831L;
 	private Emprestimo emprestimo;
-=======
-//		funcionarios = new ArrayList<Funcionario>();
-//		clientes = new ArrayList<Cliente>();
-	}
-
-	//Atributos
-	private static final long serialVersionUID = 1728576448215873831L;
-	private Emprestimo emprestimo;
-	private Livro livro;
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	private List<Emprestimo> emprestimos;
 	private List<Livro> livros;
 	private List<Cliente> clientes;
 	private List<Funcionario> funcionarios;
-<<<<<<< HEAD
 
 	// Ações
 	public String cadastrarEmprestimo() {
@@ -86,7 +60,7 @@ public class EmprestimoBean implements Serializable {
 	}
 
 	public String devolverLivro(Emprestimo emprestimo) {
-		emprestimo.gerarMulta();
+
 		if (emprestimo.devolverLivro() == false) {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não foi emprestado!"));
@@ -104,35 +78,6 @@ public class EmprestimoBean implements Serializable {
 	}
 
 	// Getter & Setters
-=======
-//	private List<Funcionario> funcionarios;
-//	private List<Cliente> clientes;
-	
-	
-	// Ações
-	public String cadastrarEmprestimo() {
-		emprestimo.getLivro().setEmprestado(true);
-		livro.setEmprestado(true);
-		EmprestimoDAO.cadastrarEmprestimo(emprestimo);
-		emprestimo = new Emprestimo();
-		return "Index.xhtml?faces-redirect=true";
-	}
-	
-
-	public void devolverLivro(Emprestimo emprestimo) {
-		EmprestimoDAO.devolverLivro(emprestimo);
-	}
-
-	// Getter & Setters
-	public Livro getLivro() {
-		return livro;
-	}
-
-	public void setLivro(Livro livro) {
-		this.livro = livro;
-	}
-	
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	public Emprestimo getEmprestimo() {
 		return emprestimo;
 	}
@@ -174,9 +119,4 @@ public class EmprestimoBean implements Serializable {
 		this.funcionarios = funcionarios;
 	}
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 }

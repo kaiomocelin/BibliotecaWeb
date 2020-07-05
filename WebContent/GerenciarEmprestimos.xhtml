@@ -1,34 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-<<<<<<< HEAD
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:a4j="http://richfaces.org/a4j"
-=======
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/Templates/Template.xhtml">
 	<ui:define name="conteudo">
 
-<<<<<<< HEAD
 		<h2 style="margin-bottom: 20px">Gerenciar Emprestimos</h2>
 
 		<h:link outcome="CadastrarEmprestimo" value="Emprestar livro"
 			styleClass="btn btn-primary" />
 		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
-=======
-		<h2 style="margin-bottom: 20px">Gerenciar livros</h2>
-
-		<h:link outcome="CadastrarEmprestimo" value="Emprestar livro"
-			styleClass="btn btn-primary" />
-		<h:link outcome="Index" value="Home"
-			styleClass="btn btn-primary" />
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 
 		<h:form style="margin-top: 20px">
 			<h:dataTable value="#{emprestimoBean.emprestimos}" var="emprestimo"
@@ -39,7 +25,6 @@
 				</h:column>
 
 				<h:column>
-<<<<<<< HEAD
 					<f:facet name="header">Data</f:facet>
 					<h:outputText value="#{emprestimo.dataEmprestimo}" />
 				</h:column>
@@ -50,8 +35,6 @@
 				</h:column>
 
 				<h:column>
-=======
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 					<f:facet name="header">Título</f:facet>
 					<h:outputText value="#{emprestimo.livro.titulo}" />
 				</h:column>
@@ -65,23 +48,11 @@
 					<f:facet name="header">Funcionario</f:facet>
 					<h:outputText value="#{emprestimo.funcionario.nome}" />
 				</h:column>
-<<<<<<< HEAD
 
 				<h:column>
 					<f:facet name="header">Devolver</f:facet>
 					<h:commandButton
 						action="#{emprestimoBean.devolverLivro(emprestimo)}"
-=======
-				
-				<h:column>
-					<f:facet name="header">Ocupado</f:facet>
-					<h:outputText value="#{emprestimo.livro.emprestado}" />
-				</h:column>
-				
-				<h:column>
-					<f:facet name="header">Devolver</f:facet>
-					<h:commandButton action="#{emprestimoBean.devolverLivro(emprestimo)}"
->>>>>>> 62756635758920db1db877917d32ecaf53a49188
 						value="Devolver" styleClass="btn btn-danger" />
 				</h:column>
 			</h:dataTable>

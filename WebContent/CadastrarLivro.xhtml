@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h:form>
+			<h2>Cadastrar Livro</h2>
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<div class="form-group">
+				<h:outputLabel value="Titulo:" />
+				<h:inputText id="txtNome" value="#{livroBean.livro.titulo}"
+					styleClass="form-control col-6" required="true"
+					requiredMessage="Campo obrigatório!" />
+				<h:message for="txtTitulo" styleClass="text-danger" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Autor:" />
+				<h:inputText value="#{livroBean.livro.autor}"
+					styleClass="form-control col-6" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Editora:" />
+				<h:inputText value="#{livroBean.livro.editora}"
+					styleClass="form-control col-6" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Genero:" />
+				<h:selectOneMenu value="#{livroBean.livro.genero}"
+					styleClass="form-control col-4"
+					converter="omnifaces.SelectItemsIndexConverter">
+					<f:selectItem itemValue="" itemLabel="  -- SELECIONE --  " />
+					<f:selectItems value="#{livroBean.generos}" var="genero"
+						itemLabel="#{genero.nome}" itemValue="#{genero}" />
+				</h:selectOneMenu>
+			</div>
+
+			<h:commandButton action="#{livroBean.cadastrar()}" value="Cadastrar" />
+			
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

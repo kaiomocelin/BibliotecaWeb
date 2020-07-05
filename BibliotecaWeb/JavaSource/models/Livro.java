@@ -10,12 +10,22 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
+<<<<<<< HEAD
 public class Livro implements Serializable {
+=======
+public class Livro implements Serializable{
+	
+	
+>>>>>>> 62756635758920db1db877917d32ecaf53a49188
 
 	public Livro() {
 		genero = new Genero();
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 62756635758920db1db877917d32ecaf53a49188
 	private static final long serialVersionUID = -4117983109157680623L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "livro_seq_gen")
@@ -29,6 +39,9 @@ public class Livro implements Serializable {
 	@ManyToOne
 	private Genero genero;
 
+	
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -126,4 +139,10 @@ public class Livro implements Serializable {
 		return true;
 	}
 
+<<<<<<< HEAD
+=======
+
+	
+	
+>>>>>>> 62756635758920db1db877917d32ecaf53a49188
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h2 style="margin-bottom: 20px">Gerenciamento de funcionarios</h2>
+
+		<h:link outcome="CadastrarFuncionario" value="Novo funcionario"
+			styleClass="btn btn-primary" />
+		<h:link outcome="Index" value="Home"
+			styleClass="btn btn-primary" />
+
+		<h:form style="margin-top: 20px">
+			<h:dataTable value="#{funcionarioBean.funcionarios}" var="funcionario"
+				styleClass="table table-striped table-hover">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{funcionario.id}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{funcionario.nome}" />
+				</h:column>
+
+				
+				<h:column>
+					<f:facet name="header">Remover</f:facet>
+					<h:commandButton action="#{funcionarioBean.remover(funcionario)}"
+						value="Remover" styleClass="btn btn-danger" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Alterar</f:facet>
+					<h:commandButton action="#{funcionarioBean.detalhar()}" value="Alterar"
+						styleClass="btn btn-warning">
+						<f:param name="idFuncionario" value="#{funcionario.id}" />
+					</h:commandButton>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
