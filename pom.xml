@@ -44,5 +44,21 @@
     		<artifactId>omnifaces</artifactId>
     		<version>3.6.1</version>
 		</dependency>
+<<<<<<< HEAD
+=======
+		<!-- Biblioteca do Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.15.Final</version>
+        </dependency>
+
+        <!-- Biblioteca do postgres -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.12</version>
+        </dependency>
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 	</dependencies>
 </project>

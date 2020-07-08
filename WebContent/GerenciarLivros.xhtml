@@ -15,11 +15,15 @@
 		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
 
 		<h:form style="margin-top: 20px">
+<<<<<<< HEAD
 			<style type="text/css">
 				body .ui-staticmessage.ui-message {
 					width: 100%;
 				}
 			</style>
+=======
+			<p:growl id="growl" showDetail="true" sticky="true" />
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 
 			<h:dataTable value="#{livroBean.livros}" var="livro"
 				styleClass="table table-striped table-hover">
@@ -56,7 +60,11 @@
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
 					<h:commandButton action="#{livroBean.remover(livro)}"
+<<<<<<< HEAD
 						value="Remover" styleClass="btn btn-danger" update="form" />
+=======
+						value="Remover" styleClass="btn btn-danger" />
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 				</h:column>
 
 				<h:column>

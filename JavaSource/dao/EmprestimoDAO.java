@@ -34,6 +34,7 @@ public class EmprestimoDAO {
 		em.getTransaction().commit();
 		return true;
 	}
+<<<<<<< HEAD
 	
 	public static boolean alterar(Emprestimo emprestimo) {
 		EntityManager em = JPAUtils.getInstance();
@@ -42,5 +43,7 @@ public class EmprestimoDAO {
 		em.getTransaction().commit();
 		return true;
 	}
+=======
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 
 }

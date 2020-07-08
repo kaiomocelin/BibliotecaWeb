@@ -70,10 +70,13 @@ public class Emprestimo implements Serializable {
 			cliente.setPendencia(true);
 		}
 	}
+<<<<<<< HEAD
 	
 	public void adiarDevolucao() {
 		dataDevolucao = dataDevolucao.plusDays(2);
 	}
+=======
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 
 	public Livro getLivro() {
 		return livro;

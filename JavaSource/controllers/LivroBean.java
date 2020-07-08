@@ -47,6 +47,7 @@ public class LivroBean implements Serializable {
 
 	public String remover(Livro livro) {
 		FacesContext context = FacesContext.getCurrentInstance();
+<<<<<<< HEAD
 		if (livro.getEmprestado() == false) {
 			if (LivroDAO.remover(livro)) {
 				context.addMessage(null, new FacesMessage("Successful", "Livro removido com sucesso!"));
@@ -62,6 +63,18 @@ public class LivroBean implements Serializable {
 			return null;
 		}
 
+=======
+		if(LivroDAO.remover(livro)) {
+			context.addMessage(null, new FacesMessage("Successful",  "Livro removido com sucesso!") );
+			return null;
+		}else {
+			context.addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não pode ser removido!"));
+			return null;
+		}
+			
+		
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 	}
 
 	public String detalhar() {
@@ -76,7 +89,11 @@ public class LivroBean implements Serializable {
 		LivroDAO.alterar(livro);
 		livro = new Livro();
 		return "GerenciarLivros.xhtml?faces-redirect=true";
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 	}
 
 	// Getter & Setters

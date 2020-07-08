@@ -26,7 +26,11 @@ public class Cliente implements Serializable{
 	private int id;
 	private String nome;
 	private boolean pendencia;
+<<<<<<< HEAD
 	private double multa = 0;
+=======
+	private double multa;
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 	private String telefone;
 	private String email;
 

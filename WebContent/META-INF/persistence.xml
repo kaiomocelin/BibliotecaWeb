@@ -12,7 +12,11 @@
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/biblioteca_web" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
+<<<<<<< HEAD
 			<property name="javax.persistence.jdbc.password" value="" />
+=======
+			<property name="javax.persistence.jdbc.password" value="123456" />
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 			<!-- DB Dialect -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<!-- create / create-drop / update -->

@@ -60,7 +60,11 @@ public class EmprestimoBean implements Serializable {
 	}
 
 	public String devolverLivro(Emprestimo emprestimo) {
+<<<<<<< HEAD
 		emprestimo.gerarMulta();
+=======
+
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 		if (emprestimo.devolverLivro() == false) {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não foi emprestado!"));
@@ -76,6 +80,7 @@ public class EmprestimoBean implements Serializable {
 		}
 
 	}
+<<<<<<< HEAD
 	
 	public String adiarDevolucao(Emprestimo emprestimo) {
 		emprestimo.adiarDevolucao();
@@ -90,6 +95,8 @@ public class EmprestimoBean implements Serializable {
 		
 		
 	}
+=======
+>>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 
 	// Getter & Setters
 	public Emprestimo getEmprestimo() {
