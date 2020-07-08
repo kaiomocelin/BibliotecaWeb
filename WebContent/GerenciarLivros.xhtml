@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h2 style="margin-bottom: 20px">Gerenciamento de livros</h2>
+
+		<h:link outcome="CadastrarLivro" value="Novo livro"
+			styleClass="btn btn-primary" />
+		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
+
+		<h:form style="margin-top: 20px">
+			<style type="text/css">
+				body .ui-staticmessage.ui-message {
+					width: 100%;
+				}
+			</style>
+
+			<h:dataTable value="#{livroBean.livros}" var="livro"
+				styleClass="table table-striped table-hover">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{livro.id}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Título</f:facet>
+					<h:outputText value="#{livro.titulo}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Editora</f:facet>
+					<h:outputText value="#{livro.editora}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Autor</f:facet>
+					<h:outputText value="#{livro.autor}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Genero</f:facet>
+					<h:outputText value="#{livro.genero.nome}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Ocupado</f:facet>
+					<h:outputText value="#{livro.emprestado}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Remover</f:facet>
+					<h:commandButton action="#{livroBean.remover(livro)}"
+						value="Remover" styleClass="btn btn-danger" update="form" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Alterar</f:facet>
+					<h:commandButton action="#{livroBean.detalhar()}" value="Alterar"
+						styleClass="btn btn-warning">
+						<f:param name="idLivro" value="#{livro.id}" />
+					</h:commandButton>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/Templates/Template.xhtml">
+	<ui:define name="conteudo">
+
+		<h:form>
+			<h2>Cadastrar Cliente</h2>
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<div class="form-group">
+				<h:outputLabel value="Nome:" />
+				<h:inputText id="txtNome" value="#{clienteBean.cliente.nome}"
+					styleClass="form-control col-6" 
+					required="true" requiredMessage="Campo obrigatório!" />
+				<h:message for="txtNome" styleClass="text-danger" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Telefone:" />
+				<h:inputText value="#{clienteBean.cliente.telefone}" 
+					styleClass="form-control col-6" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Email:" />
+				<h:inputText value="#{clienteBean.cliente.email}" 
+					styleClass="form-control col-6" />
+			</div>
+
+			<h:commandButton action="#{clienteBean.cadastrar()}"
+				value="Cadastrar" />
+			<br />
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+</html>
