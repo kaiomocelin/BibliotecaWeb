@@ -6,32 +6,61 @@
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
+	
+	
 
 <ui:composition template="/Templates/Template.xhtml">
+
+
 	<ui:define name="conteudo">
+		<h1 class="title">Página-Inicial</h1>
+	<div class="menu-container">
+		
+		
+		<div class="func-options">
+		
+		<a  value="Novo livro"
+			class="btn-link-option" >Opções do funcionário</a>
+			
+		<a href="CadastrarLivro.jsf" value="Novo livro"
+			class="btn-link" >Cadastrar Livros</a>
+			
+			<a href="GerenciarLivros.jsf" value="Gerenciar livros"
+			class="btn-link" >Gerenciar Livros</a>
+			
+			<a href="CadastrarCliente.jsf" value="Novo cliente"
+			class="btn-link" >Cadastrar Cliente</a>
+			
+				<a href="GerenciarClientes.jsf" value="Gerenciar clientes"
+			class="btn-link" >Gerenciar Clientes</a>
+			
+			<a href="CadastrarFuncionario.jsf" value="Novo funcionario"
+			 class="btn-link">Cadastrar Funcionários</a>
+			 
+			 	<a href="GerenciarFuncionarios.jsf" value="Gerenciar funcionarios"
+			class="btn-link"  >Gerenciar Funcionários</a>
+		</div>
+		
+		<div class="cli-options">
+		
+		<a  value="Novo livro"
+			class="btn-link-option" >Opções do Cliente</a>
+		
+			<a href="CadastrarEmprestimo.jsf" value="Emprestar livro"
+			class="btn-link"  >Emprestar Livro</a>
+			
+			<a href="GerenciarEmprestimos.jsf"  value="Gerenciar emprestimos"
+			 class="btn-link" >Verificar Empréstimos</a>
+			
+		</div>
 
-		<h1 style="margin-bottom: 30px">Menu</h1>
+		
+		
 
-		<h:link outcome="CadastrarLivro" value="Novo livro"
-			styleClass="btn btn-primary" />
-		<h:link outcome="GerenciarLivros" value="Gerenciar livros"
-			styleClass="btn btn-primary" />
-		<br />
-		<h:link outcome="CadastrarCliente" value="Novo cliente"
-			styleClass="btn btn-primary" />
-		<h:link outcome="GerenciarClientes" value="Gerenciar clientes"
-			styleClass="btn btn-primary" />
-		<br />
-		<h:link outcome="CadastrarFuncionario" value="Novo funcionario"
-			styleClass="btn btn-primary" />
-		<h:link outcome="GerenciarFuncionarios" value="Gerenciar funcionarios"
-			styleClass="btn btn-primary" />
-		<br />
-		<h:link outcome="CadastrarEmprestimo" value="Emprestar livro"
-			styleClass="btn btn-primary" />
-		<h:link outcome="GerenciarEmprestimos" value="Gerenciar emprestimos"
-			styleClass="btn btn-primary" />
 
+			
+			</div>
+	
 	</ui:define>
 </ui:composition>
 </html>
