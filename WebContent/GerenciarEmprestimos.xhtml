@@ -11,11 +11,11 @@
 	<ui:define name="conteudo">
 
 		<h2 style="margin-bottom: 20px">Gerenciar Emprestimos</h2>
-
+	<div class="buttons-container"> 
 		<h:link outcome="CadastrarEmprestimo" value="Emprestar livro"
 			styleClass="btn btn-primary" />
 		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
-
+	</div>
 		<h:form style="margin-top: 20px">
 			<h:dataTable value="#{emprestimoBean.emprestimos}" var="emprestimo"
 				styleClass="table table-striped table-hover">

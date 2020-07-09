@@ -8,7 +8,7 @@
 
 <ui:composition template="/Templates/Template.xhtml">
 	<ui:define name="conteudo">
-
+		
 		<h:form>
 			<h2>Cadastrar Livro</h2>
 			<p:messages id="messages" showDetail="true" closable="true">
@@ -46,9 +46,10 @@
 				</h:selectOneMenu>
 			</div>
 
-			<h:commandButton action="#{livroBean.cadastrar()}" value="Cadastrar" />
+			<h:commandButton action="#{livroBean.cadastrar()}" value="Cadastrar" styleClass="btn btn-outline-primary" />
 			
 		</h:form>
+	
 	</ui:define>
 </ui:composition>
 

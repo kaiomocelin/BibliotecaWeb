@@ -11,11 +11,12 @@
 	<ui:define name="conteudo">
 
 		<h2 style="margin-bottom: 20px">Gerenciamento de funcionarios</h2>
-
+	<div class="buttons-container"> 
 		<h:link outcome="CadastrarFuncionario" value="Novo funcionario"
 			styleClass="btn btn-primary" />
 		<h:link outcome="Index" value="Home"
 			styleClass="btn btn-primary" />
+			</div>
 
 		<h:form style="margin-top: 20px">
 			<h:dataTable value="#{funcionarioBean.funcionarios}" var="funcionario"

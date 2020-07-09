@@ -9,14 +9,14 @@
 
 <ui:composition template="/Templates/Template.xhtml">
 	<ui:define name="conteudo">
-
+<div class="container">
 		<h2 style="margin-bottom: 20px">Gerenciamento de clientes</h2>
-
+		<div class="buttons-container"> 
 		<h:link outcome="CadastrarCliente" value="Novo cliente"
 			styleClass="btn btn-primary" />
 		<h:link outcome="Index" value="Home"
 			styleClass="btn btn-primary" />
-
+			</div>
 		<h:form style="margin-top: 20px">
 			<h:dataTable value="#{clienteBean.clientes}" var="cliente"
 				styleClass="table table-striped table-hover">
@@ -60,6 +60,7 @@
 				</h:column>
 			</h:dataTable>
 		</h:form>
+		</div>
 	</ui:define>
 </ui:composition>
 </html>

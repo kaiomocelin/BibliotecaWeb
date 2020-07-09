@@ -6,14 +6,15 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/Templates/Template.xhtml">
-	<ui:define name="conteudo">
+	<ui:define name="conteudo" >
 
 		<h2 style="margin-bottom: 20px">Gerenciamento de livros</h2>
-
+		<div class="buttons-container">
 		<h:link outcome="CadastrarLivro" value="Novo livro"
-			styleClass="btn btn-primary" />
-		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
-
+		
+			styleClass="btn btn-outline-primary" />
+		<h:link outcome="Index" value="Home" styleClass="btn btn-outline-primary" />
+		</div>
 		<h:form style="margin-top: 20px">
 			<p:growl id="growl" showDetail="true" sticky="true" />
 

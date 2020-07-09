@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+.register{
+	display:flex;
+	flex-direction:row;
+	
+	
+}
+.input{
+	height:50px;
+}
+
+.buttons-container{
+	display:flex;
+	flex-direction:row;
+	
+	
+}
+.buttons-container a{
+	margin-right:15px;
+}
