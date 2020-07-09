@@ -17,6 +17,11 @@
 		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
 
 		<h:form style="margin-top: 20px">
+
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
 			<h:dataTable value="#{emprestimoBean.emprestimos}" var="emprestimo"
 				styleClass="table table-striped table-hover">
 				<h:column>
@@ -50,7 +55,6 @@
 				</h:column>
 
 				<h:column>
-<<<<<<< HEAD
 					<f:facet name="header">Adiar devolução</f:facet>
 					<h:commandButton
 						action="#{emprestimoBean.adiarDevolucao(emprestimo)}"
@@ -58,8 +62,6 @@
 				</h:column>
 
 				<h:column>
-=======
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 					<f:facet name="header">Devolver</f:facet>
 					<h:commandButton
 						action="#{emprestimoBean.devolverLivro(emprestimo)}"

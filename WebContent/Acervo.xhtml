@@ -8,24 +8,18 @@
 <ui:composition template="/Templates/Template.xhtml">
 	<ui:define name="conteudo">
 
-		<h2 style="margin-bottom: 20px">Gerenciamento de livros</h2>
+		<h2 style="margin-bottom: 20px">Acervo</h2>
 
-		<h:link outcome="CadastrarLivro" value="Novo livro"
-			styleClass="btn btn-primary" />
 		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
 
 		<h:form style="margin-top: 20px">
-
-			<p:messages id="messages" showDetail="true" closable="true">
-				<p:autoUpdate />
-			</p:messages>
-
+		
 			<h:dataTable value="#{livroBean.livros}" var="livro"
 				styleClass="table table-striped table-hover">
-				<p:column>
+				<h:column>
 					<f:facet name="header">Id</f:facet>
 					<h:outputText value="#{livro.id}" />
-				</p:column>
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Título</f:facet>
@@ -52,20 +46,6 @@
 					<h:outputText value="#{livro.emprestado}" />
 				</h:column>
 
-				<h:column>
-					<f:facet name="header">Remover</f:facet>
-					<h:commandButton action="#{livroBean.remover(livro)}"
-						value="Remover" styleClass="btn btn-danger" update="@form">
-					</h:commandButton>
-				</h:column>
-
-				<p:column>
-					<f:facet name="header">Alterar</f:facet>
-					<h:commandButton action="#{livroBean.detalhar()}" value="Alterar"
-						styleClass="btn btn-warning">
-						<f:param name="idLivro" value="#{livro.id}" />
-					</h:commandButton>
-				</p:column>
 			</h:dataTable>
 		</h:form>
 	</ui:define>

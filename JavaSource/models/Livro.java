@@ -2,16 +2,14 @@ package models;
 
 import java.io.Serializable;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-=======
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 
 @Entity
 public class Livro implements Serializable {
@@ -32,11 +30,9 @@ public class Livro implements Serializable {
 
 	@ManyToOne
 	private Genero genero;
-<<<<<<< HEAD
-	 
-=======
+	
 
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
+
 	public int getId() {
 		return id;
 	}

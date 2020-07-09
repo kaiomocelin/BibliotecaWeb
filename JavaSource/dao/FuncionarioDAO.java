@@ -22,11 +22,12 @@ public class FuncionarioDAO {
 				return funcionarios;
 	}
 	
-	public static void remover(Funcionario funcionario) {
+	public static boolean remover(Funcionario funcionario) {
 		EntityManager em = JPAUtils.getInstance();
 		em.getTransaction().begin();
 		em.remove(em.merge(funcionario));
 		em.getTransaction().commit();
+		return true;
 	}
 	
 	public static void alterar(Funcionario funcionario) {

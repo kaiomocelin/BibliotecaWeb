@@ -14,12 +14,14 @@
 
 		<h:link outcome="CadastrarFuncionario" value="Novo funcionario"
 			styleClass="btn btn-primary" />
-		<h:link outcome="Index" value="Home"
-			styleClass="btn btn-primary" />
+		<h:link outcome="Index" value="Home" styleClass="btn btn-primary" />
 
 		<h:form style="margin-top: 20px">
-			<h:dataTable value="#{funcionarioBean.funcionarios}" var="funcionario"
-				styleClass="table table-striped table-hover">
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<h:dataTable value="#{funcionarioBean.funcionarios}"
+				var="funcionario" styleClass="table table-striped table-hover">
 				<h:column>
 					<f:facet name="header">Id</f:facet>
 					<h:outputText value="#{funcionario.id}" />
@@ -30,17 +32,17 @@
 					<h:outputText value="#{funcionario.nome}" />
 				</h:column>
 
-				
+
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
 					<h:commandButton action="#{funcionarioBean.remover(funcionario)}"
-						value="Remover" styleClass="btn btn-danger" />
+						value="Remover" styleClass="btn btn-danger" update="@form" />
 				</h:column>
 
 				<h:column>
 					<f:facet name="header">Alterar</f:facet>
-					<h:commandButton action="#{funcionarioBean.detalhar()}" value="Alterar"
-						styleClass="btn btn-warning">
+					<h:commandButton action="#{funcionarioBean.detalhar()}"
+						value="Alterar" styleClass="btn btn-warning">
 						<f:param name="idFuncionario" value="#{funcionario.id}" />
 					</h:commandButton>
 				</h:column>

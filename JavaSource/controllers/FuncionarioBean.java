@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -32,8 +33,17 @@ public class FuncionarioBean implements Serializable{
 		return "Index.xhtml?faces-redirect=true";
 	}
 	
-	public void remover(Funcionario funcionario) {
-		FuncionarioDAO.remover(funcionario);
+	public String remover(Funcionario funcionario) {
+		if(FuncionarioDAO.remover(funcionario)) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Funcionario removido com sucesso!"));
+			return null;
+		} else {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este funcionario não pode ser removido!"));
+			return null;
+		}
+		
 	}
 	
 	public String detalhar() {

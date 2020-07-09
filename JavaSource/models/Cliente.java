@@ -1,6 +1,7 @@
 package models;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.persistence.Entity;
@@ -8,14 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @RequestScoped
 public class Cliente implements Serializable{
 
 	
-
-
 	public Cliente() {
 	}
 
@@ -24,18 +25,23 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq_gen")
 	@SequenceGenerator(name = "cliente_seq_gen", sequenceName = "cliente_id_seq")
 	private int id;
+    private String senha;
 	private String nome;
-	private boolean pendencia;
-<<<<<<< HEAD
-	private double multa = 0;
-=======
-	private double multa;
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 	private String telefone;
 	private String email;
+	
+	private boolean pendencia;
+	private double multa = 0;
 
-	
-	
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public double getMulta() {
 		return multa;
 	}

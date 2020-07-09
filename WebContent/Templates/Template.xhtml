@@ -1,42 +1,34 @@
-  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<!-- <link rel="stylesheet" href="css/styles.css" /> -->
-<<<<<<< HEAD
-=======
-	
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
+
 	<link rel="stylesheet"
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 		crossorigin="anonymous" />
-<<<<<<< HEAD
-=======
-		<link rel="stylesheet" type="text/css" href="CSS/Menu.css" />
-		
-		
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
+	<link rel="stylesheet" type="text/css" href="CSS/Menu.css" />
+
+
 </h:head>
 <h:body>
 	<nav class="navbar navbar-light bg-light" style="margin-bottom: 30px">
-	<a href="#" class="navbar-brand">Biblioteca Web - Java Web</a> <!-- <h:link outcome="#" value="E-commerce - Java Web" styleClass="navbar-brand"/>  -->
+	<a href="#" class="navbar-brand">Biblioteca Web</a>
+	<p:clock />
+	<p:outputLabel>Bem vindo, #{loginBean.cliente.nome} <a href="#{loginBean.deslogar()}" class="navbar-brand">[logout]</a></p:outputLabel>
 	</nav>
-
-<<<<<<< HEAD
+	
 	<article class="container"> <ui:insert name="conteudo">
-=======
-	<article > <ui:insert name="conteudo">
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 	</ui:insert> </article>
-
+	
 	<footer style="margin-top: 30px; text-align:center">
 	<hr />
-	<p>&copy; Desenvolvido por xxx - 2020</p>
+	<p>&copy; Desenvolvido por grupo de alunos da Universidade Positivo - 2020</p>
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

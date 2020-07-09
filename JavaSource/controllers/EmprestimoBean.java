@@ -40,7 +40,7 @@ public class EmprestimoBean implements Serializable {
 	public String cadastrarEmprestimo() {
 		if (emprestimo.verificarPendencia() == true) {
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este cliente tem pendencias!"));
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "Cliente com pendências!"));
 			return null;
 		} else {
 			if (emprestimo.verificarStatus() == true) {
@@ -49,10 +49,12 @@ public class EmprestimoBean implements Serializable {
 				return null;
 			} else {
 				if (EmprestimoDAO.cadastrarEmprestimo(emprestimo)) {
-					return "Index.xhtml?faces-redirect=true";
+					FacesContext.getCurrentInstance().addMessage(null,
+							new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Livro emprestado com sucesso!"));
+					return "GerenciarEmprestimos.xhtml?faces-redirect=true";
 				} else {
 					FacesContext.getCurrentInstance().addMessage(null,
-							new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro está ocupado!"));
+							new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não pode ser emprestado"));
 					return null;
 				}
 			}
@@ -60,18 +62,17 @@ public class EmprestimoBean implements Serializable {
 	}
 
 	public String devolverLivro(Emprestimo emprestimo) {
-<<<<<<< HEAD
 		emprestimo.gerarMulta();
-=======
 
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 		if (emprestimo.devolverLivro() == false) {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não foi emprestado!"));
 			return null;
 		} else {
 			if (EmprestimoDAO.devolverLivro(emprestimo)) {
-				return "GerenciarEmprestimos.xhtml?faces-redirect=true";
+				FacesContext.getCurrentInstance().addMessage(null,
+						new FacesMessage(FacesMessage.SEVERITY_INFO, "info!", "Livro devolvido com sucesso!"));
+				return null;
 			} else {
 				FacesContext.getCurrentInstance().addMessage(null,
 						new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Este livro não foi emprestado!"));
@@ -80,12 +81,11 @@ public class EmprestimoBean implements Serializable {
 		}
 
 	}
-<<<<<<< HEAD
 	
 	public String adiarDevolucao(Emprestimo emprestimo) {
 		emprestimo.adiarDevolucao();
 		if(EmprestimoDAO.alterar(emprestimo)) {
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Data adiada com sucesso!"));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Data de devolução adiada para o dia: " + emprestimo.getDataDevolucao()));
 			return "GerenciarEmprestimos.xhtml?faces-redirect=true";
 		}else {
 			FacesContext.getCurrentInstance().addMessage(null,
@@ -95,8 +95,6 @@ public class EmprestimoBean implements Serializable {
 		
 		
 	}
-=======
->>>>>>> 01260eccaa5401f2bff7a8d1eb665da6c13f7e16
 
 	// Getter & Setters
 	public Emprestimo getEmprestimo() {
